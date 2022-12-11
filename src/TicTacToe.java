@@ -106,86 +106,100 @@ public class TicTacToe implements ActionListener {
            buttons[2].getText() == "X"){
             xWins(0,1,2);
         }
-        if(buttons[3].getText() == "X" &&
+        else if(buttons[3].getText() == "X" &&
                 buttons[4].getText() == "X" &&
                 buttons[5].getText() == "X"){
             xWins(3,4,5);
         }
-        if(buttons[6].getText() == "X" &&
+        else if(buttons[6].getText() == "X" &&
                 buttons[7].getText() == "X" &&
                 buttons[8].getText() == "X"){
             xWins(6,7,8);
         }
-        if(buttons[0].getText() == "X" &&
+        else if(buttons[0].getText() == "X" &&
                 buttons[3].getText() == "X" &&
                 buttons[6].getText() == "X"){
             xWins(0,3,6);
         }
-        if(buttons[1].getText() == "X" &&
+        else if(buttons[1].getText() == "X" &&
                 buttons[4].getText() == "X" &&
                 buttons[7].getText() == "X"){
             xWins(1,4,7);
         }
-        if(buttons[2].getText() == "X" &&
+        else if(buttons[2].getText() == "X" &&
                 buttons[5].getText() == "X" &&
                 buttons[8].getText() == "X"){
             xWins(2,5,8);
         }
-        if(buttons[2].getText() == "X" &&
+        else if(buttons[2].getText() == "X" &&
                 buttons[4].getText() == "X" &&
                 buttons[6].getText() == "X"){
             xWins(2,4,6);
         }
-        if(buttons[0].getText() == "X" &&
+        else if(buttons[0].getText() == "X" &&
                 buttons[4].getText() == "X" &&
                 buttons[8].getText() == "X"){
             xWins(0,4,8);
         }
-
-
-
-        if(buttons[0].getText() == "O" &&
+        else if(buttons[0].getText() == "O" &&
                 buttons[1].getText() == "O" &&
                 buttons[2].getText() == "O"){
             oWins(0,1,2);
         }
-        if(buttons[3].getText() == "O" &&
+        else if(buttons[3].getText() == "O" &&
                 buttons[4].getText() == "O" &&
                 buttons[5].getText() == "O"){
             oWins(3,4,5);
         }
-        if(buttons[6].getText() == "O" &&
+        else if(buttons[6].getText() == "O" &&
                 buttons[7].getText() == "O" &&
                 buttons[8].getText() == "O"){
             oWins(6,7,8);
         }
-        if(buttons[0].getText() == "O" &&
+        else if(buttons[0].getText() == "O" &&
                 buttons[3].getText() == "O" &&
                 buttons[6].getText() == "O"){
             oWins(0,3,6);
         }
-        if(buttons[1].getText() == "O" &&
+        else if(buttons[1].getText() == "O" &&
                 buttons[4].getText() == "O" &&
                 buttons[7].getText() == "O"){
             oWins(1,4,7);
         }
-        if(buttons[2].getText() == "O" &&
+        else if(buttons[2].getText() == "O" &&
                 buttons[5].getText() == "O" &&
                 buttons[8].getText() == "O"){
             oWins(2,5,8);
         }
-        if(buttons[2].getText() == "O" &&
+        else if(buttons[2].getText() == "O" &&
                 buttons[4].getText() == "O" &&
                 buttons[6].getText() == "O"){
             oWins(2,4,6);
         }
-        if(buttons[0].getText() == "O" &&
+        else if(buttons[0].getText() == "O" &&
                 buttons[4].getText() == "O" &&
                 buttons[8].getText() == "O"){
             oWins(0,4,8);
         }
+        else if(buttons[0].getText() != "" &&
+                buttons[1].getText() != "" &&
+                buttons[2].getText() != "" &&
+                buttons[3].getText() != "" &&
+                buttons[4].getText() != "" &&
+                buttons[5].getText() != "" &&
+                buttons[6].getText() != "" &&
+                buttons[7].getText() != "" &&
+                buttons[8].getText() != ""){
+            remis();
+        }
     }
-
+    public void remis(){
+        for(int i = 0; i < 9; i++){
+            buttons[i].setEnabled(false);
+        }
+        label.setText("REMIS");
+        resetFrame.setVisible(true);
+    }
     public void xWins(int a, int b, int c){
         buttons[a].setBackground(new Color(0,225,0));
         buttons[b].setBackground(new Color(0,225,0));
